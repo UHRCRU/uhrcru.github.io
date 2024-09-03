@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Matrix Portfolio</title>
+    <title>Uğur Can Şadılı</title>
     <link rel="stylesheet" href="style.css">
+    <meta name="description" content="Portfolio of Uğur Can Şadılı, showcasing software development projects and skills.">
 </head>
 <body>
     <canvas style="position: fixed; top: 0; left: 0;"></canvas> 
@@ -12,7 +13,7 @@
         <img class="profile-picture" src="assets\profile.jpg" alt="Profile Picture" />
 		<!-- <img class="profile-picture" src="/assets/profile.png" alt="Profile Picture" /> -->
         <ul class="social-icons">
-          <li><a target="_blank" href="https://www.linkedin.com/in/uhrcru/"><img src="assets\icons8-linkedin.svg" alt="LinkedIn" /></a></li>
+          <li><a target="_blank" href="https://www.linkedin.com/in/uhrcru/" aria-label="LinkedIn Profile"><img src="assets\icons8-linkedin.svg" alt="LinkedIn" /></a></li>
           <li><a target="_blank" href="https://github.com/UHRCRU"><img src="assets\icons8-github.svg" alt="GitHub" /></a></li>
           <li><a target="_blank" href="https://www.instagram.com/uhrcru/"><img src="assets\icons8-instagram.svg" alt="Instagram" /></a></li>
         </ul>
@@ -21,7 +22,26 @@
             <li><a target="_blank" href="#"><i class="fa fa-book"></i>🔴Project 💊</a></li>
             <li><a target="_blank" href="https://www.djangoproject.com/"><i class="fa fa-cog fa-spin"></i>Currently Learning: <u>Django</u>🐍</a></li> -->
         </ul>
-        <p>All I'm offering is the truth, nothing more.</p>
+        <p class="matrix-quote">Uğur Can Şadılı</p>
+        
+        <section class="my-work">
+            <h2>My Work</h2>
+            <div class="work-grid">
+                <div class="work-item">
+                    <img src="assets/project1.jpg" alt="Project 1" loading="lazy">
+                    <h3>Project 1</h3>
+                    <p>Short description of Project 1</p>
+                    <a href="#" class="btn">View Project</a>
+                </div>
+                <div class="work-item">
+                    <img src="assets/project2.jpg" alt="Project 2">
+                    <h3>Project 2</h3>
+                    <p>Short description of Project 2</p>
+                    <a href="#" class="btn">View Project</a>
+                </div>
+                <!-- Add more work items as needed -->
+            </div>
+        </section>
     </div>
     <script type="text/javascript" src="script.js"></script>
 </body>
