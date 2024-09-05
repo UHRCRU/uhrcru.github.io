@@ -6,43 +6,55 @@
     <title>Uğur Can Şadılı</title>
     <link rel="stylesheet" href="style.css">
     <meta name="description" content="Portfolio of Uğur Can Şadılı, showcasing software development projects and skills.">
+    <meta name="keywords" content="Game Developer, Portfolio, Uğur Can Şadılı, Software Developer, Artificial Intelligence, UHRCRU">
+    <link rel="icon" href="assets/favicon-32x32.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    <canvas style="position: fixed; top: 0; left: 0;"></canvas> 
+    <section id="home" class="intro-section">
+        <div class="intro-row">
+            <div class="name-and-description">
+                <h1 class="name">Uğur Can Şadılı</h1>
+                <p class="description">Software Developer | AI Enthusiast | Tech Wizard</p>
+            </div>
+            <div class="links">
+                <a href="https://www.linkedin.com/in/UHRCRU/" target="_blank" class="icon" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/UHRCRU" target="_blank" class="icon" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="#" class="icon" id="email-icon" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                <span class="email" id="email-address">uhrcru01@gmail.com</span>
+                <a href="assets/UĞUR CAN ŞADILI.pdf" target="_blank" class="resume-button">Resume <i class="fas fa-arrow-down"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <canvas></canvas>
     <div class="container">
         <img class="profile-picture" src="assets\profile.jpg" alt="Profile Picture" />
-		<!-- <img class="profile-picture" src="/assets/profile.png" alt="Profile Picture" /> -->
-        <ul class="social-icons">
-          <li><a target="_blank" href="https://www.linkedin.com/in/uhrcru/" aria-label="LinkedIn Profile"><img src="assets\icons8-linkedin.svg" alt="LinkedIn" /></a></li>
-          <li><a target="_blank" href="https://github.com/UHRCRU"><img src="assets\icons8-github.svg" alt="GitHub" /></a></li>
-          <li><a target="_blank" href="https://www.instagram.com/uhrcru/"><img src="assets\icons8-instagram.svg" alt="Instagram" /></a></li>
-        </ul>
-        <ul class="links">
-            <!-- <li><a target="_blank" href="#"><i class="fa fa-keyboard-o"></i>🔵Project 💊</a></li>
-            <li><a target="_blank" href="#"><i class="fa fa-book"></i>🔴Project 💊</a></li>
-            <li><a target="_blank" href="https://www.djangoproject.com/"><i class="fa fa-cog fa-spin"></i>Currently Learning: <u>Django</u>🐍</a></li> -->
-        </ul>
-        <p class="matrix-quote">Uğur Can Şadılı</p>
         
-        <section class="my-work">
-            <h2>My Work</h2>
-            <div class="work-grid">
-                <div class="work-item">
-                    <img src="assets/project1.jpg" alt="Project 1" loading="lazy">
-                    <h3>Project 1</h3>
-                    <p>Short description of Project 1</p>
-                    <a href="#" class="btn">View Project</a>
+        <section id="projects">
+            <h2 class="projects-title">Projects</h2>
+            <div class="projects-container">
+                <div class="project-card">
+                    <h3>Learn Isle</h3>
+                    <a href="#" class="project-link">View Project</a>
+                    <div class="image-container">
+                        <img src="assets/learn-isle-app-icon.jpeg" alt="Learn Isle App Icon">
+                    </div>
+                    <p>Educational game for children to learn about foundational concepts in a fun and interactive way. As inpocket.ai development team member, I am responsible for implementing several game mechanics, debugging, testing supporting the team and improving the game.</p>
                 </div>
-                <div class="work-item">
-                    <img src="assets/project2.jpg" alt="Project 2">
+                <div class="project-card">
                     <h3>Project 2</h3>
-                    <p>Short description of Project 2</p>
-                    <a href="#" class="btn">View Project</a>
+                    <a href="#" class="project-link">View Project</a>
+                    <div class="image-container">
+                        <img src="assets/project2.jpg" alt="Project 2">
+                    </div>
+                    <p>Description of Project 2. This is a brief overview of what the project entails.</p>
                 </div>
-                <!-- Add more work items as needed -->
+                <!-- Add more project cards as needed -->
             </div>
         </section>
     </div>
+
     <script type="text/javascript" src="script.js"></script>
 </body>
 </html>

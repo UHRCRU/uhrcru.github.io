@@ -1,5 +1,15 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap'); /* Alternative font */
-@import url('https://fonts.cdnfonts.com/css/matrix'); /* Default Matrix themed font */
+body, html {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+    overflow-y: auto; /* Allow vertical scrolling */
+    font-family: 'Courier New', monospace;
+}
+
+/* Apply Courier New to all elements except those with class 'fab', 'fas', or their parent elements */
+*:not(.fab):not(.fas):not(.fab *):not(.fas *) {
+    font-family: 'Courier New', monospace !important;
+}
 
 canvas {
     position: fixed;
@@ -10,176 +20,257 @@ canvas {
     z-index: -1;
 }
 
-body, html {
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-}
-
-.container {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: rgba(255, 255, 255, 0.2);
-    border-radius: 10px;
+.intro-section {
+    position: fixed; /* Change from absolute to fixed */
+    top: 0;
+    left: 0;
+    width: 100%;
     padding: 20px;
-    text-align: center;
-    font-family: 'Matrix', sans-serif;
-    font-weight: bolder;
-    width: 90%; /* Instead of 50% */
-    max-width: 600px; /* Limit maximum width */
+    box-sizing: border-box;
+    z-index: 10; /* Ensure it's above other content */
 }
 
-.profile-picture {
-    width: 100%; /* Full width of container */
-    max-width: 300px; /* Limit maximum size */
-    height: auto; /* Maintain aspect ratio */
-    margin: 0 auto 20px; /* Center image and add bottom margin */
-    border-radius: 10px; /* Changed from 50% to 0 */
-    border: medium solid;
-}
-
-.social-icons {
+.intro-row {
     display: flex;
-    justify-content: center;
-    list-style: none;
-    padding: 0;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
 }
 
-.social-icons li {
-    margin: 0 8px;
+.name-and-description {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
 }
 
-.social-icons a {
-    display: inline-block;
+.name {
+    color: #00FF00;
+    font-size: 48px;
+    margin: 0;
+    line-height: 1;
 }
 
-.social-icons img {
-    width: 40px; /* Smaller icons for mobile */
-    height: 40px;
-    transition: filter 0.2s ease, opacity 0.2s ease;
-    filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(288deg) brightness(102%) contrast(102%);
-}
-
-.social-icons a:hover img {
-    opacity: 0.6;
-    filter: invert(57%) sepia(93%) saturate(1752%) hue-rotate(86deg) brightness(119%) contrast(119%);
+.description {
+    color: #00FF00;
+    font-size: 24px;
+    margin-top: 10px;
+    margin-bottom: 0;
+    display: block;
 }
 
 .links {
-    list-style: none;
-    padding: 0;
-    text-align: center;
+    display: flex;
+    align-items: center;
 }
 
-.links li {
-    margin: 5px 0;
-}
-
-.links a {
-    display: block;
-    width: 100%;
-    padding: 10px 0;
-    background-color: black;
-    color: white;
+.icon {
+    color: #00FF00;
     text-decoration: none;
-    transition: color 0.2s ease;
+    font-size: 35px;
+    margin-right: 15px;
+    transition: color 0.3s ease;
 }
 
-.links a:hover {
+.icon i {
+    font-family: 'Font Awesome 5 Free', 'Font Awesome 5 Brands' !important;
+}
+
+.icon:hover {
+    color: #ffffff;
+}
+
+.email {
+    display: none;
     color: #00FF00;
+    font-size: 18px;
+    margin-right: 15px;
 }
 
-.links i {
-    margin-right: 7px;
-}
-
-.matrix-quote {
-    font-family: 'Courier New', monospace;
-    font-size: 1.5em;
-    font-weight: bold;
+.resume-button {
     color: #00FF00;
-    text-shadow: 0 0 5px #00FF00;
-    margin-top: 20px;
-    margin-bottom: 30px;
+    border: 1px solid #00FF00;
+    padding: 4px 15px 4px 25px;
+    border-radius: 5px;
+    font-size: 16px;
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.my-work {
-    margin-top: 40px;
+.resume-button i {
+    margin-left: 10px;
 }
 
-.my-work h2 {
-    font-size: 1.8em;
-    color: #00FF00;
-    margin-bottom: 20px;
+.resume-button:hover {
+    background-color: #00FF00;
+    color: #000000;
 }
 
-.work-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 20px;
+.resume-button:hover i {
+    color: #000000;
 }
 
-.work-item {
-    background-color: rgba(0, 0, 0, 0.7);
-    border-radius: 10px;
-    padding: 20px;
+.container {
+    width: 100%; /* Adjust to allow more room for larger cards */
+    max-width: 1800px; /* Optional: increase the max width */
+    position: relative; /* Change from absolute to relative */
+    top: auto; /* Remove top positioning */
+    left: auto; /* Remove left positioning */
+    transform: none; /* Remove transform */
     text-align: center;
-    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto; /* Center the container */
+    padding-top: 60px; /* Add some top padding to account for the intro section */
 }
 
-.work-item img {
+.profile-picture {
     width: 100%;
     max-width: 300px;
     height: auto;
-    border-radius: 5px;
-    margin-bottom: 15px;
+    border-radius: 10px;
+    border: medium solid #00FF00;
+    margin-bottom: 20px; /* Reduced from 40px to bring projects closer */
+    margin-top: 60px; /* Keeps some space at the top */
 }
 
-.work-item h3 {
-    font-size: 1.2em;
+.projects h2 {
     color: #00FF00;
-    margin-bottom: 10px;
+    font-size: 36px;
+    margin-top: 20px;
 }
 
-.work-item p {
-    font-size: 0.9em;
-    color: #ffffff;
-    margin-bottom: 15px;
+@media (max-width: 768px) {
+    .intro-row {
+        flex-direction: column;
+    }
+
+    .links {
+        margin-top: 20px;
+    }
 }
 
-.work-item:hover {
-    transform: scale(1.05);
+/* Add these new styles at the end of your existing CSS */
+
+#projects {
+    width: 100%;
+    padding: 20px;
+    margin-top: 20px; /* Reduced from 150px to bring it closer to the profile picture */
 }
 
-.btn {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #00FF00;
-    color: #000000;
-    text-decoration: none;
+.projects-title {
+    color: #00FF00;
+    font-size: 36px;
+    text-align: center;
+    margin-bottom: 20px;
+    margin-top: 0; /* Ensures no extra space above the title */
+}
+
+.projects-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    justify-content: center;
+}
+
+.project-card {
+    background-color: hsla(0, 0%, 0%, 0.800);
+    border: 1px solid #00FF00;
+    border-radius: 10px;
+    padding: 20px;
+    display: grid;
+    grid-template-areas:
+        "title link"
+        "image image"
+        "description description";
+    grid-template-columns: 1fr auto;
+    grid-template-rows: auto auto 1fr;
+    align-items: start;
+    text-align: left;
+}
+
+.project-card h3 {
+    color: #00FF00;
+    margin: 0;
+    grid-area: title;
+    align-self: center;
+}
+
+.project-link {
+    color: #00FF00;
+    background-color: #000000;
+    padding: 8px 15px;
     border-radius: 5px;
-    transition: background-color 0.3s ease;
+    text-decoration: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    grid-area: link;
+    justify-self: end;
+    align-self: center;
+    border: 1px solid #00FF00;
 }
 
-.btn:hover {
-    background-color: #00CC00;
+.project-link:hover {
+    color: #000000;
+    background-color: #00FF00;
 }
 
-@media (min-width: 768px) {
-    .social-icons img {
-        width: 60px; /* Larger icons for desktop */
-        height: 60px;
+.image-container {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    border-radius: 8px;
+    margin: 15px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    grid-area: image;
+}
+
+.project-card p {
+    color: #00FF00;
+    margin: 0;
+    grid-area: description;
+}
+
+.project-card .image-container {
+    width: 100%;
+    height: 400px; /* Adjust this value as needed */
+    overflow: hidden;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.project-card .image-container img {
+    width: auto;
+    height: auto;
+    max-width: 120%;
+    max-height: 120%;
+    object-fit: contain; /* This will fit the entire image within the container */
+}
+
+@media (max-width: 768px) {
+    .container {
+        top: 0;
+        transform: translate(-50%, 0);
+        padding-top: 80px; /* Reduced from 100px to bring content up a bit */
     }
-    
-    .work-grid {
-        grid-template-columns: 1fr 1fr;
-    }
-}
 
-@media (min-width: 1024px) {
-    .work-grid {
-        grid-template-columns: 1fr 1fr 1fr;
+    .profile-picture {
+        margin-top: 80px; /* Adjusted for mobile to account for fixed header */
+        margin-bottom: 20px;
+    }
+
+    .projects-container {
+        grid-template-columns: 1fr;
+    }
+
+    .project-card .image-container {
+        height: 150px;
     }
 }
