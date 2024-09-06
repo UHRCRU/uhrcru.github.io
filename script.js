@@ -43,11 +43,17 @@ function animate(currentTime) {
 
 requestAnimationFrame(animate);
 
+let resizeTimeout;
 window.addEventListener("resize", () => {
-    width = canvas.width = window.innerWidth;
-    height = canvas.height = window.innerHeight;
-    col = width / font;
-    arr = Array(Math.ceil(col)).fill(1);
+    clearTimeout(resizeTimeout);
+    resizeTimeout = setTimeout(() => {
+        width = canvas.width = window.innerWidth;
+        height = canvas.height = window.innerHeight;
+        col = width / font;
+        arr = Array(Math.ceil(col)).fill(1);
+        ctx.fillStyle = "rgba(0,0,0,1)";
+        ctx.fillRect(0, 0, width, height);
+    }, 250);
 });
 
 document.addEventListener('DOMContentLoaded', function() {
