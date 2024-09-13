@@ -59,9 +59,41 @@ window.addEventListener("resize", () => {
 document.addEventListener('DOMContentLoaded', function() {
     const emailIcon = document.getElementById('email-icon');
     const emailAddress = document.getElementById('email-address');
+    const originalEmail = emailAddress.textContent;
     
     emailIcon.addEventListener('click', function(event) {
         event.preventDefault();
-        emailAddress.style.display = (emailAddress.style.display === 'none' || emailAddress.style.display === '') ? 'inline' : 'none';
+        
+        if (emailAddress.style.display === 'none' || emailAddress.style.display === '') {
+            emailAddress.style.display = 'inline';
+            glitchEffect(emailAddress, originalEmail);
+        } else {
+            emailAddress.style.display = 'none';
+        }
     });
+    
+    function glitchEffect(element, text) {
+        const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()_+-=[]{}|;:'\",.<>?/`~";
+        let iterations = 0;
+        const maxIterations = 5; // Reduced from 10 to 5
+        const interval = 30; // Reduced from 50 to 30
+        
+        const glitchInterval = setInterval(() => {
+            let newText = text.split('').map((char, index) => {
+                if (index < iterations) {
+                    return char;
+                }
+                return chars[Math.floor(Math.random() * chars.length)];
+            }).join('');
+            
+            element.textContent = newText;
+            
+            if (iterations >= text.length) {
+                clearInterval(glitchInterval);
+                element.textContent = text;
+            }
+            
+            iterations += 1 / maxIterations;
+        }, interval);
+    }
 });
