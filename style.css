@@ -412,3 +412,152 @@ body::-webkit-scrollbar-thumb {
 body::-webkit-scrollbar-thumb:hover {
     background: #00CC00;
 }
+
+/* Chatbot Styles */
+#chatbot-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+    font-family: 'Courier New', monospace;
+  }
+  
+  #chat-toggle {
+    width: 60px;
+    height: 60px;
+    background: #000000;
+    border: 2px solid #00FF00;
+    border-radius: 8px;
+    cursor: pointer;
+    position: relative;
+    box-shadow: 0 0 10px #00FF00;
+    transition: all 0.3s ease;
+  }
+  
+  /* U-shaped lines animation */
+  #chat-toggle::before,
+  #chat-toggle::after {
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    border: 2px solid #00FF00;
+    border-radius: 5px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  #chat-toggle::before {
+    border-bottom: none;
+    border-right: none;
+    width: 20px;
+    height: 20px;
+  }
+  
+  #chat-toggle::after {
+    border-top: none;
+    border-left: none;
+  }
+  
+  #chat-interface {
+    position: fixed;
+    bottom: 90px;
+    right: 20px;
+    width: 50vw; /* Changed to 50% of viewport width */
+    min-width: 300px; /* Minimum width for usability */
+    height: 60vh; /* Changed to 60% of viewport height */
+    background: rgba(0, 0, 0, 0.95); /* Darker background */
+    border: 2px solid #00FF00;
+    border-radius: 0px; /* Removed border radius for command prompt look */
+    transform: scale(0);
+    transform-origin: bottom right;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 0 15px rgba(0, 255, 0, 0.3);
+    font-family: 'Courier New', monospace;
+  }
+  
+  #chat-interface.open {
+    transform: scale(1);
+  }
+  
+  #chat-header {
+    padding: 8px 15px;
+    background: #00FF00;
+    color: #000000;
+    font-weight: bold;
+    border-bottom: none;
+    font-size: 1em;
+  }
+  
+  #chat-messages {
+    flex: 1;
+    padding: 15px;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: #00FF00 #000000;
+    background: #000000;
+  }
+  
+  #chat-input-container {
+    padding: 10px;
+    border-top: 1px solid #00FF00;
+    background: #000000;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  #user-input {
+    width: 100%;
+    padding: 8px;
+    background: #000000;
+    border: 1px solid #00FF00;
+    color: #00FF00;
+    font-family: 'Courier New', monospace;
+    border-radius: 0;
+    font-size: 14px;
+    box-sizing: border-box;
+    margin: 0;
+    outline: none;
+  }
+  
+  .chat-message {
+    margin: 8px 0;
+    padding: 4px 8px;
+    border-radius: 0;
+    background: transparent;
+    border: none;
+    color: #00FF00;
+    font-family: 'Courier New', monospace;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+  }
+  
+  .chat-message.user::before {
+    content: '> ';
+    color: #00FF00;
+  }
+  
+  .chat-message.bot::before {
+    content: '█ ';
+    color: #00FF00;
+  }
+  
+  @media (max-width: 480px) {
+    #chat-interface {
+        width: 100vw;
+        height: 60vh;
+        right: 0;
+        bottom: 80px;
+        min-width: unset;
+    }
+    
+    #chat-toggle {
+        width: 50px;
+        height: 50px;
+        right: 10px;
+        bottom: 10px;
+    }
+  }
