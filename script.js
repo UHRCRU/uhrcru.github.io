@@ -97,6 +97,24 @@ document.addEventListener('DOMContentLoaded', function() {
         }, interval);
     }
 });
+    
+  // Collapsible project sections
+  document.addEventListener('DOMContentLoaded', function() {
+    const toggleButtons = document.querySelectorAll('.projects-toggle-btn');
+    toggleButtons.forEach(btn => {
+      btn.addEventListener('click', function() {
+        const targetSelector = btn.getAttribute('data-target');
+        const target = document.querySelector(targetSelector);
+        if (target) {
+          const isVisible = target.style.display === 'block';
+          // Hide all sections first
+          document.querySelectorAll('.projects-collapsible').forEach(sec => sec.style.display = 'none');
+          // Toggle current
+          target.style.display = isVisible ? 'none' : 'block';
+        }
+      });
+    });
+  });
 
 const chatToggle = document.getElementById('chat-toggle');
 const chatInterface = document.getElementById('chat-interface');

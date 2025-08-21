@@ -1,3 +1,71 @@
+/* Collapsible Project Section Buttons */
+.projects-toggle-btn {
+    background: #000;
+    color: #00FF00;
+    border: 2px solid #00FF00;
+    border-radius: 8px;
+    padding: 14px 32px;
+    font-size: 20px;
+    font-family: 'Courier New', monospace;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s, color 0.3s, box-shadow 0.3s;
+    box-shadow: 0 0 10px rgba(0,255,0,0.2);
+    cursor: pointer;
+    margin: 20px 0 10px 0;
+    display: inline-block;
+}
+.projects-toggle-btn:hover {
+    background: #00FF00;
+    color: #000;
+    box-shadow: 0 0 20px #00FF00;
+}
+@media (max-width: 480px) {
+    .projects-toggle-btn {
+        font-size: 16px;
+        padding: 10px 18px;
+    }
+}
+/* Projects Button Styles */
+.projects-button-container {
+    display: flex;
+    justify-content: center;
+    margin: 50px 0 0 0; /* Increased top margin for better spacing */
+}
+.projects-button {
+    background: #000;
+    color: #00FF00;
+    border: 2px solid #00FF00;
+    border-radius: 8px;
+    padding: 14px 32px;
+    font-size: 20px;
+    font-family: 'Courier New', monospace;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s, color 0.3s, box-shadow 0.3s;
+    box-shadow: 0 0 10px rgba(0,255,0,0.2);
+    cursor: pointer;
+}
+.projects-button:hover {
+    background: #00FF00;
+    color: #000;
+    box-shadow: 0 0 20px #00FF00;
+}
+@media (max-width: 480px) {
+    .projects-button {
+        font-size: 16px;
+        padding: 10px 18px;
+    }
+}
+.about-section,
+#skills {
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
+    padding: 30px 20px;
+    margin: 30px auto 40px auto; /* Add bottom margin for button spacing */
+    max-width: 900px;
+    box-shadow: 0 0 20px rgba(0,255,0,0.05);
+}
 /* Scrollbar styles */
 html, body {
     scrollbar-width: thin;
@@ -32,9 +100,13 @@ html::-webkit-scrollbar-thumb:hover, body::-webkit-scrollbar-thumb:hover {
 body, html {
     margin: 0;
     padding: 0;
-    overflow-x: hidden; /* Prevent horizontal scrolling */
-    overflow-y: auto; /* Allow vertical scrolling */
+    overflow-x: hidden;
     font-family: 'Courier New', monospace;
+    height: 100%;
+}
+body {
+    min-height: 100vh;
+    overflow-y: auto;
 }
 
 /* Apply Courier New to all elements except those with class 'fab', 'fas', or their parent elements */
@@ -191,8 +263,8 @@ canvas {
 
 #projects {
     width: 100%;
-    padding: 20px;
-    margin-top: 20px; /* Reduced from 150px to bring it closer to the profile picture */
+    padding: 60px 20px 20px 20px; /* Increased top padding to prevent overlap */
+    margin-top: 20px;
 }
 
 .projects-title {
@@ -281,11 +353,12 @@ canvas {
 }
 
 .project-card .image-container img {
-    width: auto;
-    height: auto;
-    max-width: 120%;
-    max-height: 120%;
-    object-fit: contain; /* This will fit the entire image within the container */
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain; /* Fit the whole image inside, no cropping */
+    background: #111; /* Optional: subtle background for letterboxing */
 }
 
 @media (max-width: 768px) {
@@ -421,6 +494,34 @@ body::-webkit-scrollbar-thumb:hover {
     z-index: 1000;
     font-family: 'Courier New', monospace;
   }
+
+/* Neon green theme for About and Skills sections */
+.about-section h2,
+#skills h2 {
+    color: #00FF00;
+    font-size: 32px;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    text-align: center;
+}
+.about-section p,
+#skills ul li {
+    color: #00FF00;
+    font-size: 18px;
+    text-align: center;
+}
+#skills ul {
+    list-style-type: disc;
+    padding-left: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+#skills ul li {
+    margin: 0 10px;
+    font-size: 18px;
+}
   
   #chat-toggle {
     width: 60px;

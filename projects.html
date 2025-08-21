@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects | Uğur Can Şadılı</title>
+    <link rel="stylesheet" href="style.css">
+    <meta name="description" content="Projects by Uğur Can Şadılı, Data Analyst and Developer.">
+    <meta name="keywords" content="Projects, Portfolio, Uğur Can Şadılı, Data Analyst, Power BI, Python, SQL, AI, UHRCRU">
+    <link rel="icon" href="assets/favicon-32x32.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <section id="home" class="intro-section">
+        <div class="intro-row">
+            <div class="name-and-description">
+                <h1 class="name">Uğur Can Şadılı</h1>
+                <p class="description">Data Analyst with DataOps & data engineering experience</p>
+            </div>
+            <div class="links">
+                <a href="https://www.linkedin.com/in/UHRCRU/" target="_blank" class="icon" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/UHRCRU" target="_blank" class="icon" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="#" class="icon" id="email-icon" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                <span class="email" id="email-address" data-text="uhrcru01@gmail.com">uhrcru01@gmail.com</span>
+            </div>
+        </div>
+    </section>
+
+    <canvas></canvas>
+    <div class="container">
+        <section id="projects">
+            <div id="analytics-projects">
+                <h2 class="projects-title">Data Analytics & Engineering Projects</h2>
+                <div class="projects-container">
+                    <div class="project-card">
+                        <h3>Steam Game Database Visualization</h3>
+                        <div class="image-container">
+                            <img src="assets/BestGamesOfAllTime.png" alt="Steam Game Database Visualization">
+                        </div>
+                        <p><strong>Power BI, Excel</strong> &mdash; Analyzed and visualized Steam game trends, genres, and user engagement. Cleaned and transformed large datasets in Excel, then built interactive dashboards in Power BI to uncover actionable insights for game developers and marketers.</p>
+                    </div>
+                    <div class="project-card">
+                        <h3>Database Processing & Visualization</h3>
+                        <div class="image-container">
+                            <img src="assets/dataframeanalysis.png" alt="Colorful pie chart showing the sum of total order value by customer name, with each segment labeled by value and percentage. A table on the right lists customer names, order status such as new, delivered, cancelled, and processing, and corresponding order values. The environment is a business analytics dashboard with a neutral, professional tone. Text in the image includes customer names, statuses, and numerical order values.">
+                        </div>
+                        <p><strong>MySQL, SQLite, PostgreSQL, Power BI</strong> &mdash; Designed ETL pipelines to transfer and process data across multiple database systems. Automated data cleaning and aggregation, then visualized key metrics and trends in Power BI for business reporting.</p>
+                    </div>
+                    <div class="project-card">
+                        <h3>Custom NLP Script for Data Extraction</h3>
+                        <div class="image-container">
+                            <img src="assets/shape.png" alt="Custom NLP Script for Data Extraction">
+                        </div>
+                        <p><strong>Python, NLTK</strong> &mdash; Developed a Natural Language Processing script to extract structured data from unstructured text, enabling automated data entry and reporting for business documents.</p>
+                    </div>
+                    <div class="project-card">
+                        <h3>AI Influencer Visual Analytics</h3>
+                        <div class="image-container">
+                            <img src="assets/x.jpg" alt="AI Influencer Visual Analytics">
+                        </div>
+                        <p><strong>Python, LykosAI</strong> &mdash; Generated and analyzed AI-created visuals for influencer marketing, using advanced image generation and data analysis to optimize content strategy.</p>
+                    </div>
+                    <div class="project-card">
+                        <h3>Portfolio Website with AI Chatbot</h3>
+                        <div class="image-container">
+                            <img src="assets/portfolio.png" alt="Portfolio Website with AI Chatbot">
+                        </div>
+                        <p><strong>HTML, CSS, JavaScript, OpenAI API, Firebase</strong> &mdash; Built a personal website with an integrated AI chatbot, demonstrating web automation, API integration, and secure deployment.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="projects-button-container" style="margin-top: 60px;">
+                <button class="projects-toggle-btn" data-target="#other-projects">Other Projects</button>
+            </div>
+            <div id="other-projects" class="projects-collapsible" style="display:none;">
+                <h2 class="projects-title">Other Projects</h2>
+                <div class="projects-container">
+                    <div class="project-card">
+                        <h3>Learn Isle</h3>
+                        <a href="https://www.learnisle.net/" class="project-link" target="_blank" rel="noopener noreferrer">View Project</a>
+                        <div class="image-container">
+                            <img src="assets/learn-isle-app-icon.jpeg" alt="Learn Isle App Icon">
+                        </div>
+                        <p>Commercial educational game for children. Contributed to game logic, in-game purchases, puzzle creation, and OpenCV-based interactive features in Unity & C#.</p>
+                    </div>
+                    <div class="project-card">
+                        <h3>Arena of Geometry</h3>
+                        <a href="https://github.com/UHRCRU/Arena-of-Geometry" class="project-link" target="_blank" rel="noopener noreferrer">View Project</a>
+                        <div class="image-container">
+                            <img src="assets/Arena of Geometry.gif" alt="Arena of Geometry">
+                        </div>
+                        <p>Endless runner game created as a graduation project, developed in GameMaker, Unity, and Godot.</p>
+                    </div>
+                    <div class="project-card">
+                        <h3>WooCommerce Website Template</h3>
+                        <p>Designed and developed an online store template for digital content sales.</p>
+                    </div>
+                    <div class="project-card">
+                        <h3>Text-Based Game in Python</h3>
+                        <p>Developing a text-based adventure game using the pygame library.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <!-- Chatbot Interface -->
+    <div id="chatbot-container">
+        <div id="chat-toggle"></div>
+        <div id="chat-interface">
+            <div id="chat-header">UHRCRU</div>
+            <div id="chat-messages"></div>
+            <div id="chat-input-container">
+                <input type="text" id="user-input" placeholder="Type your message...">
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="script.js"></script>
+</body>
+</html>
