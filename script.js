@@ -144,23 +144,59 @@ userInput.addEventListener('keypress', async (e) => {
   }
 });
 
-async function sendMessageToChatbot(message) {
+const FUNCTION_URL = "https://us-central1-uhrcru-backend.cloudfunctions.net/chat";
+
+async function sendMessageToChatbot(message, { timeoutMs = 15000 } = {}) {
+  const threadId = localStorage.getItem("assistantThreadId") || null;
+  const body = { message };
+  if (threadId) body.threadId = threadId;
+
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), timeoutMs);
+
   try {
-    const response = await fetch("https://us-central1-uhrcru-backend.cloudfunctions.net/chat", {
+    const resp = await fetch(FUNCTION_URL, {
       method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({ message })
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(body),
+      signal: controller.signal,
+      credentials: "omit"
     });
 
-    const data = await response.json();
-    return data.reply || "Sorry, I couldn't process that.";
-  } catch (error) {
-    console.error("Error:", error);
+    clearTimeout(timeout);
+
+    // network-level error
+    if (!resp.ok) {
+      // try to parse JSON error (server may return { error, reply } shapes)
+      let errBody;
+      try { errBody = await resp.json(); } catch (e) { throw new Error(`Network error: ${resp.status}`); }
+      const errMsg = errBody.error || errBody.reply || JSON.stringify(errBody);
+      throw new Error(errMsg);
+    }
+
+    const json = await resp.json();
+
+    // Expected server shape: { reply: string, threadId?: string }
+    if (json.threadId) {
+      try { localStorage.setItem("assistantThreadId", json.threadId); } catch (e) { /* storage failures are non-fatal */ }
+    }
+
+    if (typeof json.reply === "string" && json.reply.trim()) {
+      return json.reply;
+    }
+
+    // fallback message if server returned an unexpected shape
+    return "Sorry, I couldn't get a response right now.";
+  } catch (err) {
+    if (err.name === "AbortError") {
+      console.error("Chat request timed out");
+      return "The request timed out. Please try again.";
+    }
+    console.error("Chat error:", err);
     return "Oops! Something went wrong.";
   }
 }
+
 
 function addMessage(text, sender) {
   const messageDiv = document.createElement('div');

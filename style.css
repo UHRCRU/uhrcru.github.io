@@ -162,6 +162,22 @@ canvas {
     display: block;
 }
 
+/* Role chips under the hero title */
+.roles {
+    display: none; /* Hidden per user request */
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 8px;
+}
+.pill {
+    color: #00FF00;
+    border: 1px solid #00FF00;
+    border-radius: 999px;
+    padding: 3px 10px;
+    font-size: 14px;
+    background: rgba(0,255,0,0.06);
+}
+
 .links {
     display: flex;
     align-items: center;
@@ -298,6 +314,15 @@ canvas {
     text-align: left;
 }
 
+/* Smaller layout for imageless project cards */
+.project-card.compact {
+    padding: 14px;
+    grid-template-areas:
+        "title link"
+        "description description";
+    grid-template-rows: auto 1fr;
+}
+
 .project-card h3 {
     color: #00FF00;
     margin: 0;
@@ -361,6 +386,21 @@ canvas {
     background: #111; /* Optional: subtle background for letterboxing */
 }
 
+/* Placeholder for projects awaiting unique screenshots */
+.image-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #00FF00;
+    background: #0a0a0a;
+    border: 1px dashed #00FF00;
+    font-size: 16px;
+    text-align: center;
+    padding: 10px;
+}
+
 @media (max-width: 768px) {
     .intro-section {
         padding: 10px 5px;
@@ -383,6 +423,7 @@ canvas {
     .description {
         font-size: 18px;
     }
+    .pill { font-size: 12px; }
 
     .links {
         margin-top: 0px;
@@ -645,6 +686,15 @@ body::-webkit-scrollbar-thumb:hover {
     content: '█ ';
     color: #00FF00;
   }
+
+/* Visually hidden (accessible) content for ATS/SEO */
+.visually-hidden {
+        position: absolute !important;
+        width: 1px; height: 1px;
+        padding: 0; margin: -1px;
+        overflow: hidden; clip: rect(0, 0, 0, 0);
+        white-space: nowrap; border: 0;
+}
   
   @media (max-width: 480px) {
     #chat-interface {

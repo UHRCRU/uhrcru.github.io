@@ -5,8 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projects | Uğur Can Şadılı</title>
     <link rel="stylesheet" href="style.css">
-    <meta name="description" content="Projects by Uğur Can Şadılı, Data Analyst and Developer.">
-    <meta name="keywords" content="Projects, Portfolio, Uğur Can Şadılı, Data Analyst, Power BI, Python, SQL, AI, UHRCRU">
+        <meta name="description" content="Project case studies by Uğur Can Şadılı — Data Analysis, AI/ML, Software & Game Development, Data Engineering, dashboards and SQL analytics.">
+        <meta name="keywords" content="Uğur Can Şadılı, Projects, Case Studies, Data Analyst, Software Developer, Game Developer, Machine Learning, AI, Data Engineering, SQL, Power BI, Python, Pandas, NumPy, Matplotlib, Seaborn, Scikit-learn, PostgreSQL, MySQL, SQLite, MS SQL Server, ETL, DAX, Dashboards, Unity, Godot, GameMaker, Git, GitHub">
+        <meta name="robots" content="index, follow">
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Person",
+            "name": "Uğur Can Şadılı",
+            "url": "https://uhrcru.github.io/",
+            "sameAs": [
+                "https://www.linkedin.com/in/uhrcru/",
+                "https://github.com/UHRCRU"
+            ],
+            "jobTitle": [
+                "Artificial Intelligence Applications Student",
+                "Data Analyst",
+                "Software Developer",
+                "Game Developer",
+                "Machine Learning Engineer",
+                "Data Engineer",
+                "Full-Stack Developer"
+            ],
+            "knowsAbout": [
+                "Python","Pandas","NumPy","Matplotlib","Seaborn","Scikit-learn",
+                "SQL","PostgreSQL","MySQL","SQLite","MS SQL Server","Power BI","DAX","ETL",
+                "Unity","Godot","GameMaker","Data Visualization","Dashboards"
+            ]
+        }
+        </script>
     <link rel="icon" href="assets/favicon-32x32.png" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
@@ -30,15 +57,30 @@
     <div class="container">
         <section id="projects">
             <div id="analytics-projects">
-                <h2 class="projects-title">Data Analytics & Engineering Projects</h2>
+                <h2 class="projects-title">Projects</h2>
                 <div class="projects-container">
                     <div class="project-card">
-                        <h3>Steam Game Database Visualization</h3>
+                        <h3>Steam Game Database Visualizer (Python, SQL Server)</h3>
                         <div class="image-container">
                             <img src="assets/BestGamesOfAllTime.png" alt="Steam Game Database Visualization">
                         </div>
-                        <p><strong>Power BI, Excel</strong> &mdash; Analyzed and visualized Steam game trends, genres, and user engagement. Cleaned and transformed large datasets in Excel, then built interactive dashboards in Power BI to uncover actionable insights for game developers and marketers.</p>
+                        <p><strong>Python, SQL Server, Power BI</strong> &mdash; Built queries and dashboards to analyze game trends and engagement. Delivered insights on top genres, publishers, and release patterns to inform content strategy.</p>
                     </div>
+                    <div class="project-card">
+                        <h3>Google Trends Data Analyzer</h3>
+                        <div class="image-container">
+                            <img src="assets/Numberofreleasesperyear.png" alt="Google Trends Analyzer">
+                        </div>
+                        <p><strong>Python</strong> &mdash; Integrated Google Trends to compare regional interest and market dynamics. Produced visuals and insights supporting marketing decisions.</p>
+                    </div>
+                    <div class="project-card">
+                        <h3>Data Visualization Dashboard</h3>
+                        <div class="image-container">
+                            <img src="assets/heatmap.png" alt="Correlation Heatmap">
+                        </div>
+                        <p><strong>Pandas, Matplotlib, Power BI</strong> &mdash; Cleaned and modeled structured datasets, created dashboards, and presented trends to stakeholders.</p>
+                    </div>
+                    
                     <div class="project-card">
                         <h3>Database Processing & Visualization</h3>
                         <div class="image-container">
@@ -66,6 +108,34 @@
                             <img src="assets/portfolio.png" alt="Portfolio Website with AI Chatbot">
                         </div>
                         <p><strong>HTML, CSS, JavaScript, OpenAI API, Firebase</strong> &mdash; Built a personal website with an integrated AI chatbot, demonstrating web automation, API integration, and secure deployment.</p>
+                    </div>
+                    <!-- Imageless projects moved to end and marked compact for smaller boxes -->
+                    <div class="project-card">
+                        <h3>Public Transport Simulation Analytics</h3>
+                        <div class="image-container">
+                            <img src="assets/Multiagent.png" alt="Public Transport Simulation Analytics">
+                        </div>
+                        <p><strong>Python (PADE, Eqasim), Pandas</strong> &mdash; Processed agent-based simulation outputs and evaluated performance with F1-score, accuracy, and efficiency metrics to inform mobility planning.</p>
+                    </div>
+                    <div class="project-card compact">
+                        <h3>Neural Network Classification (MLP)</h3>
+                        <p><strong>Python, Scikit-learn</strong> &mdash; Built and evaluated a feedforward neural network with preprocessing and model validation; reported precision/recall and confusion matrix for business interpretability.</p>
+                    </div>
+                    <div class="project-card">
+                        <h3>Meal Order Builder API</h3>
+                        <p><strong>FastAPI, Design Patterns</strong> &mdash; Implemented Builder and Strategy patterns to construct complex meal orders; exposed endpoints for ordering and cost breakdown.</p>
+                    </div>
+                    <div class="project-card">
+                        <h3>Payment Processing System</h3>
+                        <p><strong>Python, SQLite</strong> &mdash; Modular payment framework with multiple strategy implementations, transaction logging, and validation.</p>
+                    </div>
+                    <div class="project-card">
+                        <h3>Smart Home Remote Control</h3>
+                        <p><strong>Python, OOP</strong> &mdash; Command-based interface to simulate smart home device control and automation logic.</p>
+                    </div>
+                    <div class="project-card">
+                        <h3>AWS Foundational Cloud</h3>
+                        <p><strong>AWS</strong> &mdash; Deployed and managed EC2 instances, configured IAM roles, and implemented basic networking and security policies.</p>
                     </div>
                 </div>
             </div>
@@ -99,6 +169,10 @@
                         <h3>Text-Based Game in Python</h3>
                         <p>Developing a text-based adventure game using the pygame library.</p>
                     </div>
+                    <div class="project-card">
+                        <h3>ShopFlex E‑Commerce Prototype</h3>
+                        <p><strong>Python, SQL</strong> &mdash; Online retail prototype with database integration, cart management, and simulated payments.</p>
+                    </div>
                 </div>
             </div>
         </section>
@@ -115,5 +189,9 @@
         </div>
     </div>
     <script type="text/javascript" src="script.js"></script>
+    <!-- Accessible, visually hidden keyword bank for ATS/readers -->
+    <div class="visually-hidden" aria-hidden="false">
+        Projects, case studies, Data Analyst, Software Developer, Game Developer, Machine Learning Engineer, AI Engineer, Data Engineer, Full‑Stack Developer, Python, Pandas, NumPy, Matplotlib, Seaborn, Scikit-learn, SQL, PostgreSQL, MySQL, SQLite, MS SQL Server, Power BI, DAX, ETL, Dashboards, EDA, Time Series, NLP, Unity, Godot, GameMaker, Git, GitHub.
+    </div>
 </body>
 </html>
